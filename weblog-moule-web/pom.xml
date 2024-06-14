@@ -1,0 +1,50 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lsj.weblog</groupId>
+        <artifactId>weblog</artifactId>
+        <version>${weblog.version}</version>
+    </parent>
+
+    <groupId>com.lsj.weblog.web</groupId>
+    <artifactId>weblog-moule-web</artifactId>
+    <packaging>jar</packaging>
+
+    <name>weblog-moule-web</name>
+    <description>weblog-moule-web 前台访问入口</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lsj.weblog.admin</groupId>
+            <artifactId>weblog-moudle-admin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lsj.weblog.common</groupId>
+            <artifactId>weblog-module-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
