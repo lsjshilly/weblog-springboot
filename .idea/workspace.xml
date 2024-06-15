@@ -4,28 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="自定义注解-实现日志切面">
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/base/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/config/JacksonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/BaseExecptionInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/BizExecption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/GlobalExecptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/config/Knife4jAdminConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/config/Knife4jConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/UserDto.java" afterDir="false" />
+    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="后端工程项目初始化完成">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-module-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/aspect/ApiOperationLogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/aspect/ApiOperationLogAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/config/JacksonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/config/JacksonConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weblog-moule-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/WeBlogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/WeBlogApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/logback-weblog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/logback-weblog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +35,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -70,13 +63,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.WeBlogApplicationTest.msyql.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.WeBlogApplication.executor": "Debug",
+    "Spring Boot.WeBlogApplication.executor": "Run",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -90,7 +84,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.WeBlogApplicationTest.msyql">
+    <configuration name="WeBlogApplicationTest.msyql" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weblog-moule-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsj.weblog.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lsj.weblog.web" />
+      <option name="MAIN_CLASS_NAME" value="com.lsj.weblog.web.WeBlogApplicationTest" />
+      <option name="METHOD_NAME" value="msyql" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WeBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="weblog-moule-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.lsj.weblog.web.WeBlogApplication" />
@@ -106,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WeBlogApplicationTest.msyql" />
         <item itemvalue="Spring Boot.WeBlogApplication" />
       </list>
     </recent_temporary>
@@ -127,7 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716825588607</updated>
       <workItem from="1718376054558" duration="5778000" />
-      <workItem from="1718416711379" duration="1021000" />
+      <workItem from="1718416711379" duration="4460000" />
     </task>
     <task id="LOCAL-00001" summary="自定义注解-实现日志切面">
       <option name="closed" value="true" />
@@ -145,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718376409518</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="后端工程项目初始化完成">
+      <option name="closed" value="true" />
+      <created>1718417829189</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718417829189</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +172,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="自定义注解-实现日志切面" />
-    <option name="LAST_COMMIT_MESSAGE" value="自定义注解-实现日志切面" />
+    <MESSAGE value="后端工程项目初始化完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端工程项目初始化完成" />
   </component>
 </project>

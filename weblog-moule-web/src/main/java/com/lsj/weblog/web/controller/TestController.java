@@ -10,10 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
 @RestController
 @RequestMapping
 public class TestController {
@@ -24,10 +20,6 @@ public class TestController {
     @ApiOperationLog(description = "测试接口")
     public UserDto user(@RequestBody @Validated UserDto userDto) {
 
-
-        userDto.setLocalDateTime(LocalDateTime.now());
-        userDto.setLocalDate(LocalDate.now());
-        userDto.setLocalTime(LocalTime.now());
 
         return userDto;
 

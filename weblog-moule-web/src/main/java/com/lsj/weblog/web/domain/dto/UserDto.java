@@ -2,29 +2,37 @@ package com.lsj.weblog.web.domain.dto;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Date;
 
 @Data
-public class UserDto {
+public class UserDto implements Serializable {
 
-    @NotNull(message = "用户名不能为空sss")
+    @Serial
+    private static final long serialVersionUID = 1L;
+    /**
+     * 主键
+     */
+    private Integer id;
+    /**
+     * 用户名
+     */
     private String username;
-
-
-    private String email;
-
-
+    /**
+     * 密码
+     */
     private String password;
-
-
-    private LocalDateTime localDateTime;
-
-
-    private LocalDate localDate;
-
-
-    private LocalTime localTime;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
+    /**
+     * 是否删除
+     */
+    private Integer isDelete;
 }
