@@ -17,6 +17,11 @@ public enum ResponseCodeEnum implements BaseExecptionInterface {
     PRODUCT_NOT_FOUND("100002", "该产品不存在（测试使用）"),
 
     VALIDATION_ERROR("100003", "参数校验错误"),
+
+
+    LOGIN_ERROR("100101", "登录失败"),
+
+    LOGIN_USERNAME_OR_PASSWORD_ERROR("100102", "用户名或密码错误"),
     ;
 
 

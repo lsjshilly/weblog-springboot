@@ -17,7 +17,6 @@ spring:
       connection-test-query: select 1
 
 
-
 pagehelper:
   params: pageNum=pageNum;pageSize=pageSize;
   support-methods-arguments: true

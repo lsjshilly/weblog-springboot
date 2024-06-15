@@ -6,3 +6,9 @@ spring:
 
 logging:
   config: classpath:logback-weblog.xml
+
+weblog:
+  security:
+    jwt:
+      secret-key: JDJhJDEwJDVsN0l5SkM3ekFobU52Q0QzdVhaTHVyVkE1dU91VXYuVmVyanRqSXdSOThWbmVoc3ZaZ1NT
+      expires: 3600
