@@ -28,4 +28,15 @@ public class JsonUtil {
             return object.toString();
         }
     }
+
+
+    public static <T> T parse(String object, Class<T> type) {
+        try {
+            // 使用ObjectMapper将对象转换为JSON字符串
+            return MAPPER.readValue(object, type);
+        } catch (JsonProcessingException e) {
+            // 如果转换失败，返回对象的toString()方法的结果
+            return null;
+        }
+    }
 }

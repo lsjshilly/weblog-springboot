@@ -4,40 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="整合mybatis">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/utils/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/utils/ResponseUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/vo/UserVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/config/JwtAuthenticationSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/config/JwtTokenManagerProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/dto/UserLoginDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/vo/UserAuth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/execption/UsernameOrPasswordNullExecption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/JwtAuthFailHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/JwtAuthSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/impl/UserDetailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/test/java/com/lsj/weblog/security/mapper/SqlTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/AdminTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
+    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="整合spring-security 认证">
+      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/filter/TokenAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/RestAccessDenyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/RestAuthenticationEntryPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-module-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/WeBlogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/WeBlogApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/utils/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/dto/UserLoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/dto/UserLoginDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +71,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.WeBlogApplication.executor": "Debug",
+    "Spring Boot.WeBlogApplication.executor": "Run",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -112,6 +87,11 @@
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -218,7 +198,9 @@
       <updated>1716825588607</updated>
       <workItem from="1718376054558" duration="5778000" />
       <workItem from="1718416711379" duration="15712000" />
-      <workItem from="1718454363411" duration="3251000" />
+      <workItem from="1718454363411" duration="14739000" />
+      <workItem from="1718509942156" duration="1775000" />
+      <workItem from="1718523844624" duration="2502000" />
     </task>
     <task id="LOCAL-00001" summary="自定义注解-实现日志切面">
       <option name="closed" value="true" />
@@ -260,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718431275824</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="整合spring-security 认证">
+      <option name="closed" value="true" />
+      <created>1718457991275</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718457991275</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +260,8 @@
     <MESSAGE value="自定义注解-实现日志切面" />
     <MESSAGE value="后端工程项目初始化完成" />
     <MESSAGE value="整合mybatis" />
-    <option name="LAST_COMMIT_MESSAGE" value="整合mybatis" />
+    <MESSAGE value="整合spring-security 认证" />
+    <option name="LAST_COMMIT_MESSAGE" value="整合spring-security 认证" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
