@@ -1,6 +1,7 @@
 package com.lsj.weblog.security.domain.vo;
 
 
+import com.lsj.weblog.common.vo.RoleVo;
 import com.lsj.weblog.common.vo.UserVo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,7 +37,7 @@ public class UserAuth implements UserDetails {
 
     private short sex; // 性别
 
-    private List<String> roles; // 用户角色列表
+    private List<RoleVo> roleVoList; // 用户角色列表
 
     private LocalDateTime createTime; // 用户创建时间
 
@@ -48,7 +49,7 @@ public class UserAuth implements UserDetails {
         this.realname = userVo.getRealname();
         this.phone = userVo.getPhone();
         this.sex = userVo.getSex();
-        this.roles = userVo.getRoles();
+        this.roleVoList = userVo.getRoleVoList();
         this.createTime = userVo.getCreateTime();
     }
 
@@ -62,7 +63,7 @@ public class UserAuth implements UserDetails {
      */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Optional.ofNullable(this.roles).orElse(new ArrayList<>()).stream().map(role -> (GrantedAuthority) () -> "ROLE_" + role).toList();
+        return Optional.ofNullable(this.roleVoList).orElse(new ArrayList<>()).stream().map(role -> (GrantedAuthority) () -> "ROLE_" + role.getName()).toList();
     }
 
     /**

@@ -29,11 +29,11 @@ class WeBlogApplicationTest {
     void test2() {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         User user = new User();
-        user.setUsername("admin");
-        user.setPassword(passwordEncoder.encode("123456"));
-        user.setNickname("管理员n");
-        user.setRealname("管理员");
-        user.setSex(1);
+        user.setUsername("test");
+        user.setPassword(passwordEncoder.encode("test"));
+        user.setNickname("测试账号");
+        user.setRealname("test");
+        user.setSex((short) 1);
 
 
         userMapper.insert(user);

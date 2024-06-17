@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="整合spring-security 认证">
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/filter/TokenAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/RestAccessDenyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/RestAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/vo/RoleVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/GlobalExecptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/GlobalExecptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/utils/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/vo/UserVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/vo/UserVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/dto/UserLoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/dto/UserLoginDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/vo/UserAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/domain/vo/UserAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/filter/TokenAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/filter/TokenAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/RestAccessDenyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/handler/RestAccessDenyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/impl/UserDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/impl/UserDetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-security/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-security/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/AdminTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/AdminTestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +81,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.WeBlogApplication.executor": "Run",
+    "Spring Boot.WeBlogApplication.executor": "Debug",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -107,6 +117,9 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.lsj.weblog.security.mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lsj.weblog.security.service" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WeBlogApplication">
@@ -201,6 +214,9 @@
       <workItem from="1718454363411" duration="14739000" />
       <workItem from="1718509942156" duration="1775000" />
       <workItem from="1718523844624" duration="2502000" />
+      <workItem from="1718540120850" duration="863000" />
+      <workItem from="1718543039065" duration="1243000" />
+      <workItem from="1718634110134" duration="5076000" />
     </task>
     <task id="LOCAL-00001" summary="自定义注解-实现日志切面">
       <option name="closed" value="true" />
@@ -250,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718457991275</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="整合spring-security 认证">
+      <option name="closed" value="true" />
+      <created>1718635335758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718635335758</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +304,21 @@
           <url>file://$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/impl/UserServiceImpl.java</url>
           <line>20</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/GlobalExecptionHandler.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/filter/TokenAuthenticationFilter.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/filter/TokenAuthenticationFilter.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

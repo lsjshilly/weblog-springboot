@@ -56,9 +56,9 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
             }
 
             String currentuser = claims.get("currentuser", String.class);
-            if (StringUtils.isNoneEmpty(currentuser)) {
+            if (StringUtils.isNoneEmpty(currentuser) && SecurityContextHolder.getContext().getAuthentication() == null) {
                 UserVo userVo = JsonUtil.parse(currentuser, UserVo.class);
-                if (userVo != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                if (userVo != null) {
                     UserAuth userAuth = new UserAuth(userVo);
                     UsernamePasswordAuthenticationToken authenticated = UsernamePasswordAuthenticationToken.authenticated(userAuth, null, userAuth.getAuthorities());
                     SecurityContextHolder.getContext().setAuthentication(authenticated);

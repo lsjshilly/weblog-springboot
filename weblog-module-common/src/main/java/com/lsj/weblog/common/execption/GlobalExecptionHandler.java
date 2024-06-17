@@ -3,6 +3,7 @@ package com.lsj.weblog.common.execption;
 
 import com.lsj.weblog.common.base.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -38,8 +39,15 @@ public class GlobalExecptionHandler {
         for (FieldError fieldError : bindingResult.getFieldErrors()) {
             sb.append(fieldError.getField()).append(" ").append(fieldError.getDefaultMessage()).append(";");
         }
-        log.error("bizExecption handler: request:{},  details:{}", request.getRequestURI(), sb);
+        log.error("methodArgumentNotValidException handler: request:{},  details:{}", request.getRequestURI(), sb);
         return new ResponseResult<>(VALIDATION_ERROR.getCode(), VALIDATION_ERROR.getMessage(), sb.toString(), null);
+    }
+
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseResult<Void> handlerAccessDenied(AccessDeniedException e, HttpServletRequest request) {
+        log.error("accessDeniedException handler: request:{},  errMsg:{}", request.getRequestURI(), e.getMessage());
+        throw e;
     }
 
 }

@@ -26,7 +26,7 @@
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from user
+        from tb_user
         where id = #{id,jdbcType=INTEGER}
     </select>
 
@@ -34,18 +34,18 @@
     <select id="selectByUsername" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from user
+        from tb_user
         where username = #{username}
     </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete
-        from user
+        from tb_user
         where id = #{id,jdbcType=INTEGER}
     </delete>
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.lsj.weblog.security.domain.entity.User"
             useGeneratedKeys="true">
-        insert into user
+        insert into tb_user
         ( username, password
         , nickname, realname, phone
         , sex)
@@ -56,7 +56,7 @@
 
 
     <update id="updateByPrimaryKeySelective" parameterType="com.lsj.weblog.security.domain.entity.User">
-        update user
+        update tb_user
         <set>
             <if test="username != null">
                 username = #{username,jdbcType=VARCHAR},

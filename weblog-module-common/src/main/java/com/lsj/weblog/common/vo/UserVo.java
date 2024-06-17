@@ -3,6 +3,7 @@ package com.lsj.weblog.common.vo;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -27,7 +28,7 @@ public class UserVo {
 
     private short sex; // 性别
 
-    private List<String> roles; // 用户角色列表
+    private List<RoleVo> roleVoList = new ArrayList<>(); // 用户角色列表
 
     private LocalDateTime createTime; // 用户创建时间
 

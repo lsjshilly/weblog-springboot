@@ -13,7 +13,7 @@
             <option name="extraClassSuffix" value="" />
             <option name="ignoreFieldPrefix" value="" />
             <option name="ignoreFieldSuffix" value="" />
-            <option name="ignoreTablePrefix" value="" />
+            <option name="ignoreTablePrefix" value="tb_" />
             <option name="ignoreTableSuffix" value="" />
             <option name="moduleName" value="weblog-moudle-admin" />
             <option name="modulePath" value="$PROJECT_DIR$/weblog-moudle-admin" />
@@ -48,8 +48,8 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="User" />
-                  <option name="tableName" value="user" />
+                  <option name="className" value="Role" />
+                  <option name="tableName" value="tb_role" />
                 </TableUIInfo>
               </list>
             </option>

@@ -24,6 +24,9 @@ public enum ResponseCodeEnum implements BaseExecptionInterface {
     LOGIN_USERNAME_OR_PASSWORD_ERROR("100102", "用户名或密码错误"),
 
     UNAUTHORIZED_ERROR("100103", "无权限访问，请先登录"),
+
+    IN_SUFFICIENT_PERMISSION_ERROR("100104", "权限不足，无法访问"),
+
     ;
 
 
