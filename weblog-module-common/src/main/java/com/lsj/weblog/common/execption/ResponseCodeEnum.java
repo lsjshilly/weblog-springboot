@@ -31,6 +31,11 @@ public enum ResponseCodeEnum implements BaseExecptionInterface {
 
     PASSWORD_REPAT_ERROR("100106", "密码不允许设置重复"),
 
+
+    // -----------后台管理 分类相关异常----------
+    CATEGORY_NAME_EXIST_ERROR("100201", "分类名称已存在，请勿重复添加"),
+
+
     ;
 
 

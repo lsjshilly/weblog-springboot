@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsj.weblog.admin.mapper.CategoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.lsj.weblog.admin.model.entity.Category">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,name,create_time,
+        update_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_category
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+
+    <select id="selectList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_category
+    </select>
+    <select id="selectByName" resultMap="BaseResultMap">
+
+        select
+        <include refid="Base_Column_List"/>
+        from tb_category
+        where name = #{name,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectListByCondition" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_category
+        <where>
+            <choose>
+                <when test="queryCategory.id != null">
+                    and id = #{queryCategory.id}
+                </when>
+                <otherwise>
+                    <if test="queryCategory.name != null">
+                        and name = #{queryCategory.name,jdbcType=VARCHAR}
+                    </if>
+                    <if test="queryCategory.startDate != null and queryCategory.endData != null">
+                        and create_time &gt;= #{queryCategory.startDate,jdbcType=TIMESTAMP}
+                        and create_time &lt;= #{queryCategory.endData,jdbcType=TIMESTAMP}
+                    </if>
+                </otherwise>
+            </choose>
+        </where>
+
+    </select>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from tb_category
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.lsj.weblog.admin.model.entity.Category"
+            useGeneratedKeys="true">
+        insert into tb_category
+            (name)
+        values (#{name,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateById" parameterType="com.lsj.weblog.admin.model.entity.Category">
+        update tb_category
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+</mapper>
