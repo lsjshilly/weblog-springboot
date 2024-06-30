@@ -23,7 +23,7 @@ public class Knife4jAdminConfiguration {
                 .groupName("admin")
                 .select()
                 //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.lsj.weblog.admin.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.lsj.weblog.security.controller").or(RequestHandlerSelectors.basePackage("com.lsj.weblog.admin.controller")))
                 .paths(PathSelectors.any())
                 .build();
     }

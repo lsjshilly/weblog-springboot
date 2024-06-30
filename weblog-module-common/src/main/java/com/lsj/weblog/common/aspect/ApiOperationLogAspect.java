@@ -1,6 +1,7 @@
 package com.lsj.weblog.common.aspect;
 
 
+import com.lsj.weblog.common.execption.BizExecption;
 import com.lsj.weblog.common.utils.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -46,8 +47,10 @@ public class ApiOperationLogAspect {
             long executeTime = System.currentTimeMillis() - start;
             log.info("======= 执行结束: [{}], 耗时: {}, 请求类: {}, 请求方法: {}", descrption, executeTime, className, methodName);
             return result;
+        } catch (BizExecption e) {
+            throw e;
         } catch (Throwable throwable) {
-            throw new RuntimeException("");
+            throw new RuntimeException(throwable.getMessage());
         } finally {
             MDC.clear();
         }

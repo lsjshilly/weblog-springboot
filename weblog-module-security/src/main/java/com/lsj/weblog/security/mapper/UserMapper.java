@@ -3,6 +3,8 @@ package com.lsj.weblog.security.mapper;
 
 import com.lsj.weblog.security.domain.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -26,4 +28,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
 
+    @Update("update tb_user set password=#{encodePassword} where username=#{username}")
+    void updateUserPassword(@Param("username") String username, @Param("encodePassword") String encodePassword);
 }

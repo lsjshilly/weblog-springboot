@@ -28,7 +28,7 @@ public class GlobalExecptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseResult<Void> handlerOtherExecption(Exception e, HttpServletRequest request) {
-        log.error("bizExecption handler: request:{},  errMsg:{}", request.getRequestURI(), e.getMessage());
+        log.error("Execption handler: request:{},  errMsg:{}", request.getRequestURI(), e.getMessage());
         return new ResponseResult<>(SYSTEM_ERROR.getCode(), SYSTEM_ERROR.getMessage());
     }
 

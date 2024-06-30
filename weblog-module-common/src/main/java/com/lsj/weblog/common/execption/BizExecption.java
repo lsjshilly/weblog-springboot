@@ -16,7 +16,6 @@ public class BizExecption extends RuntimeException {
     }
 
     public BizExecption(BaseExecptionInterface baseExecptionInterface) {
-        super(baseExecptionInterface.getMessage());
         this.code = baseExecptionInterface.getCode();
         this.message = baseExecptionInterface.getMessage();
     }
