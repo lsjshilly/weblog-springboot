@@ -4,23 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="用户相关接口">
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/base/BasePageQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/base/IdRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/base/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddCategoryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/QueryCategoryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/vo/CategoryVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/CateGoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
+    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="文章分类相关接口">
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/TagController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddTagReqDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindTagPageReqDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/SearchTagReqDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/vo/TagVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/TagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddCategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddCategoryReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/QueryCategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindCategoryPageReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/CateGoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/CateGoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +124,11 @@
       <recent name="com.lsj.weblog.security.mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lsj.weblog.security.service" />
+      <recent name="com.lsj.weblog.admin.controller" />
+      <recent name="com.lsj.weblog.admin.service.impl" />
+      <recent name="com.lsj.weblog.admin.model.dto" />
+      <recent name="com.lsj.weblog.admin.model.vo" />
+      <recent name="com.lsj.weblog.admin.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -234,7 +240,12 @@
       <workItem from="1719500077444" duration="610000" />
       <workItem from="1719584635335" duration="4800000" />
       <workItem from="1719667920371" duration="5183000" />
-      <workItem from="1719714081991" duration="14600000" />
+      <workItem from="1719714081991" duration="15113000" />
+      <workItem from="1719845716527" duration="721000" />
+      <workItem from="1719932352508" duration="2264000" />
+      <workItem from="1720011782719" duration="4638000" />
+      <workItem from="1720103439728" duration="3312000" />
+      <workItem from="1720235649477" duration="4200000" />
     </task>
     <task id="LOCAL-00001" summary="自定义注解-实现日志切面">
       <option name="closed" value="true" />
@@ -308,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719718907860</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="文章分类相关接口">
+      <option name="closed" value="true" />
+      <created>1719761410669</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719761410669</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +340,8 @@
     <MESSAGE value="整合spring-security 认证" />
     <MESSAGE value="整合spring-security 添加只读角色" />
     <MESSAGE value="用户相关接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户相关接口" />
+    <MESSAGE value="文章分类相关接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章分类相关接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -335,6 +355,16 @@
           <url>file://$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/service/impl/UserServiceImpl.java</url>
           <line>38</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/CategoryController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/TagController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

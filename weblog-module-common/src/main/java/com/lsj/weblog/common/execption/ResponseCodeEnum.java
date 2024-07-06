@@ -34,6 +34,7 @@ public enum ResponseCodeEnum implements BaseExecptionInterface {
 
     // -----------后台管理 分类相关异常----------
     CATEGORY_NAME_EXIST_ERROR("100201", "分类名称已存在，请勿重复添加"),
+    TAG_NAME_EXIST_ERROR("100202", "标签名称已存在，请勿重复添加"),
 
 
     ;

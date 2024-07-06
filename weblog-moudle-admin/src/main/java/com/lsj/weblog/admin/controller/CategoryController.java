@@ -1,8 +1,8 @@
 package com.lsj.weblog.admin.controller;
 
 
-import com.lsj.weblog.admin.model.dto.AddCategoryDto;
-import com.lsj.weblog.admin.model.dto.QueryCategoryDto;
+import com.lsj.weblog.admin.model.dto.AddCategoryReqDto;
+import com.lsj.weblog.admin.model.dto.FindCategoryPageReqDto;
 import com.lsj.weblog.admin.model.vo.CategoryVo;
 import com.lsj.weblog.admin.service.CateGoryService;
 import com.lsj.weblog.common.aspect.ApiOperationLog;
@@ -29,13 +29,13 @@ public class CategoryController {
     @PostMapping("/category/add")
     @ApiOperationLog(description = "添加分类接口")
     @ApiOperation("添加分类接口")
-    public ResponseResult<Void> addCategory(@RequestBody @Validated AddCategoryDto addCategoryDto) {
-        categoryService.addCategory(addCategoryDto);
+    public ResponseResult<Void> addCategory(@RequestBody @Validated AddCategoryReqDto addCategoryReqDto) {
+        categoryService.addCategory(addCategoryReqDto);
         return ResponseResult.success();
     }
 
 
-    @PostMapping("/category/delete")
+    @DeleteMapping("/category/delete")
     @ApiOperationLog(description = "删除分类接口")
     @ApiOperation("添加分类接口")
     public ResponseResult<Void> deleteCategory(@RequestBody IdRequestDto idRequestDto) {
@@ -44,11 +44,11 @@ public class CategoryController {
     }
 
 
-    @GetMapping("/category")
+    @GetMapping("/category/page")
     @ApiOperationLog(description = "查询分类接口")
     @ApiOperation("查询分类接口")
-    public ResponseResult<PageResult<CategoryVo>> getCategory(QueryCategoryDto queryCategoryDto) {
-        PageResult<CategoryVo> result = categoryService.queryCategoryByCondition(queryCategoryDto);
+    public ResponseResult<PageResult<CategoryVo>> getCategoryPage(FindCategoryPageReqDto findCategoryPageReqDto) {
+        PageResult<CategoryVo> result = categoryService.findCategoryPage(findCategoryPageReqDto);
         return ResponseResult.success(result);
     }
 

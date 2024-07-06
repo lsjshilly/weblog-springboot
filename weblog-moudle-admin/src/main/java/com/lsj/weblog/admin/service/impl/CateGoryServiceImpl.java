@@ -3,8 +3,8 @@ package com.lsj.weblog.admin.service.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.lsj.weblog.admin.mapper.CategoryMapper;
-import com.lsj.weblog.admin.model.dto.AddCategoryDto;
-import com.lsj.weblog.admin.model.dto.QueryCategoryDto;
+import com.lsj.weblog.admin.model.dto.AddCategoryReqDto;
+import com.lsj.weblog.admin.model.dto.FindCategoryPageReqDto;
 import com.lsj.weblog.admin.model.entity.Category;
 import com.lsj.weblog.admin.model.vo.CategoryVo;
 import com.lsj.weblog.admin.service.CateGoryService;
@@ -31,25 +31,25 @@ public class CateGoryServiceImpl implements CateGoryService {
 
 
     @Override
-    public void addCategory(AddCategoryDto addCategoryDto) {
+    public void addCategory(AddCategoryReqDto addCategoryReqDto) {
 
         // 判断是否已存在
-        Category existCategory = categoryMapper.selectByName(addCategoryDto.getName());
+        Category existCategory = categoryMapper.selectByName(addCategoryReqDto.getName());
         if (existCategory != null) {
             log.warn("分类名称已存在：{}", existCategory.getName());
             throw new BizExecption(CATEGORY_NAME_EXIST_ERROR);
         }
 
         Category category = new Category();
-        category.setName(addCategoryDto.getName().trim());
+        category.setName(addCategoryReqDto.getName().trim());
 
         categoryMapper.insert(category);
     }
 
     @Override
-    public PageResult<CategoryVo> queryCategoryByCondition(QueryCategoryDto queryCategoryDto) {
-        PageHelper.startPage(queryCategoryDto.getPageNum(), queryCategoryDto.getPageSize());
-        Page<Category> page = categoryMapper.selectListByCondition(queryCategoryDto);
+    public PageResult<CategoryVo> findCategoryPage(FindCategoryPageReqDto findCategoryPageReqDto) {
+        PageHelper.startPage(findCategoryPageReqDto.getPageNum(), findCategoryPageReqDto.getPageSize());
+        Page<Category> page = categoryMapper.selectPageByCondition(findCategoryPageReqDto);
 
         List<CategoryVo> categoryVos = page.getResult().stream().map(category -> {
             CategoryVo categoryVo = new CategoryVo();

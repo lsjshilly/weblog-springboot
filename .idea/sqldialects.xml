@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/weblog-module-security/src/main/java/com/lsj/weblog/security/mapper/UserMapper.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/weblog-module-security/src/main/resources/mapper/RoleMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/weblog-module-security/src/main/resources/mapper/UserMapper.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/TagMapper.xml" dialect="MySQL" />
   </component>
 </project>

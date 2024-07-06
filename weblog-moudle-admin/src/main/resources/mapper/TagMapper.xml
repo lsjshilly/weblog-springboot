@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lsj.weblog.admin.mapper.CategoryMapper">
+<mapper namespace="com.lsj.weblog.admin.mapper.TagMapper">
 
-    <resultMap id="BaseResultMap" type="com.lsj.weblog.admin.model.entity.Category">
+    <resultMap id="BaseResultMap" type="com.lsj.weblog.admin.model.entity.Tag">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
@@ -17,31 +17,29 @@
         update_time
     </sql>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <select id="selectById" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from tb_category
+        from tb_tag
         where id = #{id,jdbcType=BIGINT}
     </select>
-
-
-    <select id="selectList" resultMap="BaseResultMap">
+    <select id="selectByNames" resultMap="BaseResultMap"
+    >
         select
         <include refid="Base_Column_List"/>
-        from tb_category
-    </select>
-    <select id="selectByName" resultMap="BaseResultMap">
-
-        select
-        <include refid="Base_Column_List"/>
-        from tb_category
-        where name = #{name,jdbcType=VARCHAR}
+        from tb_tag
+        <where>
+            <foreach collection="names" item="item" open="name in (" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
     </select>
 
-    <select id="selectPageByCondition" resultMap="BaseResultMap">
+    <select id="selectPageByCondition" resultMap="BaseResultMap"
+            parameterType="com.lsj.weblog.admin.model.dto.FindTagPageReqDto">
         select
         <include refid="Base_Column_List"/>
-        from tb_category
+        from tb_tag
         <where>
             <choose>
                 <when test="id != null">
@@ -49,7 +47,7 @@
                 </when>
                 <otherwise>
                     <if test="name != null and name != '' ">
-                        and name concat('%',#{name,jdbcType=VARCHAR},'%')
+                        and name like concat('%',#{name,jdbcType=VARCHAR},'%')
                     </if>
                     <if test="startDate != null and endData != null">
                         and create_time &gt;= #{startDate,jdbcType=TIMESTAMP}
@@ -59,24 +57,40 @@
             </choose>
         </where>
         order by create_time desc
-
+    </select>
+    <select id="selectListByName" resultMap="BaseResultMap"
+            parameterType="com.lsj.weblog.admin.model.dto.SearchTagReqDto">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_tag
+        where name like concat('%',#{name,jdbcType=VARCHAR},'%')
+        order by create_time desc
     </select>
 
     <delete id="deleteById" parameterType="java.lang.Long">
         delete
-        from tb_category
+        from tb_tag
         where id = #{id,jdbcType=BIGINT}
     </delete>
 
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.lsj.weblog.admin.model.entity.Category"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.lsj.weblog.admin.model.entity.Tag"
             useGeneratedKeys="true">
-        insert into tb_category
+        insert into tb_tag
             (name)
         values (#{name,jdbcType=VARCHAR})
     </insert>
 
-    <update id="updateById" parameterType="com.lsj.weblog.admin.model.entity.Category">
-        update tb_category
+    <insert id="insertBatch" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_tag
+        (name)
+        values
+        <foreach collection="records" item="item" separator=",">
+            (#{item.name,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+
+    <update id="updateById" parameterType="com.lsj.weblog.admin.model.entity.Tag">
+        update tb_tag
         <set>
             <if test="name != null">
                 name = #{name,jdbcType=VARCHAR},
