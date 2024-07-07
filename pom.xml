@@ -39,6 +39,7 @@
         <pagehelper.version>1.4.6</pagehelper.version>
         <mysql.version>8.0.33</mysql.version>
         <jwt.version>0.12.5</jwt.version>
+        <minio.version>8.5.11</minio.version>
     </properties>
 
     <dependencyManagement>
@@ -107,6 +108,12 @@
                 <version>${jwt.version}</version>
             </dependency>
 
+            <!-- minio 对象存储 -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
             <!-- 常用工具库 -->
             <dependency>
                 <groupId>com.google.guava</groupId>

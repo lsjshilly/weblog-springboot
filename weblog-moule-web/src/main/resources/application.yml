@@ -3,6 +3,9 @@ server:
 spring:
   profiles:
     active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
 
 logging:
   config: classpath:logback-weblog.xml
@@ -12,3 +15,8 @@ weblog:
     jwt:
       secret-key: JDJhJDEwJDVsN0l5SkM3ekFobU52Q0QzdVhaTHVyVkE1dU91VXYuVmVyanRqSXdSOThWbmVoc3ZaZ1NT
       expires: 36000
+  minio:
+    endpoint: http://localhost:9000
+    access-key: admin
+    secret-key: admin1234
+    bucket-name: weblog

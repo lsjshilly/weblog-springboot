@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="文章分类相关接口">
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/TagController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddTagReqDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindTagPageReqDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/SearchTagReqDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/vo/TagVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/TagService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/TagServiceImpl.java" afterDir="false" />
+    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="文章分类及标签相关接口">
+      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/config/MinioAutoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/config/MinioStorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/properties/MinioProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/test/java/com/lsj/weblog/admin/RadndUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddCategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddCategoryReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/QueryCategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindCategoryPageReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/CateGoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/CateGoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,43 +66,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.SqlTest.test.executor": "Run",
-    "JUnit.WeBlogApplicationTest.msyql.executor": "Run",
-    "JUnit.WeBlogApplicationTest.test2.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.weblog [clean].executor": "Run",
-    "Maven.weblog [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.WeBlogApplication.executor": "Debug",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/e/code/HeimCode/zzyl/zzyl",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.RadndUtilTest.testRadnd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SqlTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.msyql.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.weblog [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.weblog [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WeBlogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/e/code/HeimCode/zzyl/zzyl&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.lsj.weblog.security.service.impl" />
@@ -139,6 +134,22 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.WeBlogApplication">
+    <configuration name="RadndUtilTest.testRadnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weblog-moudle-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsj.weblog.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lsj.weblog.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.lsj.weblog.admin.RadndUtilTest" />
+      <option name="METHOD_NAME" value="testRadnd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SqlTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weblog-module-security" />
       <extension name="coverage">
@@ -203,6 +214,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.WeBlogApplication" />
+        <item itemvalue="JUnit.RadndUtilTest.testRadnd" />
         <item itemvalue="JUnit.WeBlogApplicationTest.test2" />
         <item itemvalue="JUnit.SqlTest.test" />
         <item itemvalue="JUnit.WeBlogApplicationTest.msyql" />
@@ -245,7 +257,9 @@
       <workItem from="1719932352508" duration="2264000" />
       <workItem from="1720011782719" duration="4638000" />
       <workItem from="1720103439728" duration="3312000" />
-      <workItem from="1720235649477" duration="4200000" />
+      <workItem from="1720235649477" duration="7224000" />
+      <workItem from="1720322496131" duration="6295000" />
+      <workItem from="1720355458899" duration="849000" />
     </task>
     <task id="LOCAL-00001" summary="自定义注解-实现日志切面">
       <option name="closed" value="true" />
@@ -327,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719761410669</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="文章分类及标签相关接口">
+      <option name="closed" value="true" />
+      <created>1720249615330</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720249615331</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +363,8 @@
     <MESSAGE value="整合spring-security 添加只读角色" />
     <MESSAGE value="用户相关接口" />
     <MESSAGE value="文章分类相关接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="文章分类相关接口" />
+    <MESSAGE value="文章分类及标签相关接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="文章分类及标签相关接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
