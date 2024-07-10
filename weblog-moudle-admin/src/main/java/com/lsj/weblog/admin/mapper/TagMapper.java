@@ -4,6 +4,8 @@ import com.github.pagehelper.Page;
 import com.lsj.weblog.admin.model.dto.FindTagPageReqDto;
 import com.lsj.weblog.admin.model.dto.SearchTagReqDto;
 import com.lsj.weblog.admin.model.entity.Tag;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,6 +15,8 @@ import java.util.List;
  * @createDate 2024-07-04 22:36:19
  * @Entity com.lsj.weblog.admin.model.entity.Tag
  */
+@Mapper
+@Repository
 public interface TagMapper {
 
     int deleteById(Long id);

@@ -38,9 +38,12 @@ public enum ResponseCodeEnum implements BaseExecptionInterface {
     TAG_NAME_EXIST_ERROR("100202", "标签名称已存在，请勿重复添加"),
 
     AVATAR_EMPTY_ERROR("100203", "头像文件不能为空"),
-    
+
     AVATAR_UPLOAD_ERROR("100204", "头像上传失败"),
 
+    CATEGORY_NOT_EXIST_ERROR("100205", "分类名称不存在"),
+
+    ARTICLE_STATUS_ERROR("100206", "文章只能为发布或草稿状态"),
 
     ;
 

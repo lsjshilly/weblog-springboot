@@ -15,6 +15,7 @@ import com.lsj.weblog.common.execption.BizExecption;
 import com.lsj.weblog.common.execption.ResponseCodeEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,8 @@ public class TagServiceImpl implements TagService {
 
 
     private final TagMapper tagMapper;
+
+    private final SqlSessionFactory sqlSessionFactory;
 
 
     @Override
@@ -46,8 +49,6 @@ public class TagServiceImpl implements TagService {
             return tag;
         }).toList();
 
-
-        tagMapper.insertBatch(tags);
     }
 
     @Override

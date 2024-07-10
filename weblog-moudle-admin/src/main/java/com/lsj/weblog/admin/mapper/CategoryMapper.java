@@ -1,5 +1,6 @@
 package com.lsj.weblog.admin.mapper;
 
+
 import com.github.pagehelper.Page;
 import com.lsj.weblog.admin.model.dto.FindCategoryPageReqDto;
 import com.lsj.weblog.admin.model.entity.Category;
@@ -7,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 /**
  * @author liushijie
@@ -23,7 +25,7 @@ public interface CategoryMapper {
 
     int insert(Category record);
 
-    Category selectByPrimaryKey(Long id);
+    Category selectById(Long id);
 
     Category selectByName(String name);
 
