@@ -11,14 +11,14 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class InsertBatchService<T> {
+public class InsertBatchService {
 
 
     private static final int BatchSize = 1000;
 
     private final SqlSessionFactory sqlSessionFactory;
 
-    public int insertBatch(List<T> records, String statementId) {
+    public int insertBatch(List<?> records, String statementId) {
         // 检查records是否为空，避免不必要的操作
         if (records == null || records.isEmpty()) {
             return 0;

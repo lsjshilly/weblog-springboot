@@ -48,8 +48,16 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="BlogSetting" />
-                  <option name="tableName" value="tb_blog_setting" />
+                  <option name="className" value="Article" />
+                  <option name="tableName" value="tb_article" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="ArticleDetail" />
+                  <option name="tableName" value="tb_article_detail" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="ArticleTag" />
+                  <option name="tableName" value="tb_article_tag" />
                 </TableUIInfo>
               </list>
             </option>

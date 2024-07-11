@@ -27,6 +27,7 @@
         from tb_article_detail
         where id = #{id,jdbcType=BIGINT}
     </delete>
+
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.lsj.weblog.admin.model.entity.ArticleDetail"
             useGeneratedKeys="true">
         insert into tb_article_detail

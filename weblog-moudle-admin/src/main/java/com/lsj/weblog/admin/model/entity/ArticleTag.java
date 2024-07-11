@@ -1,5 +1,6 @@
 package com.lsj.weblog.admin.model.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.io.Serializable;
  * @TableName tb_article_tag
  */
 @Data
+@Builder
 public class ArticleTag implements Serializable {
     private static final long serialVersionUID = 1L;
     /**

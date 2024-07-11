@@ -1,6 +1,7 @@
 package com.lsj.weblog.admin.mapper;
 
 import com.lsj.weblog.admin.model.entity.ArticleTag;
+import org.apache.ibatis.annotations.Delete;
 
 /**
  * @author liushijie
@@ -19,4 +20,6 @@ public interface ArticleTagMapper {
     int updateById(ArticleTag record);
 
 
+    @Delete("delete from tb_article_tag where article_id = #{articleId}")
+    int deleteByArticleId(long articleId);
 }

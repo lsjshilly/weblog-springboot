@@ -45,6 +45,7 @@ public enum ResponseCodeEnum implements BaseExecptionInterface {
 
     ARTICLE_STATUS_ERROR("100206", "文章只能为发布或草稿状态"),
 
+
     ;
 
 

@@ -36,4 +36,6 @@ public interface TagMapper {
     Page<Tag> selectPageByCondition(FindTagPageReqDto findTagPageReqDto);
 
     List<Tag> selectListByName(SearchTagReqDto searchTagReqDto);
+
+    List<Tag> selectList();
 }

@@ -14,7 +14,7 @@ weblog:
   security:
     jwt:
       secret-key: JDJhJDEwJDVsN0l5SkM3ekFobU52Q0QzdVhaTHVyVkE1dU91VXYuVmVyanRqSXdSOThWbmVoc3ZaZ1NT
-      expires: 36000
+      expires: 360000
   minio:
     endpoint: http://localhost:9000
     access-key: admin

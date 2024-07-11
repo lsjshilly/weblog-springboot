@@ -66,6 +66,13 @@
         where name like concat('%',#{name,jdbcType=VARCHAR},'%')
         order by create_time desc
     </select>
+    <select id="selectList" resultMap="BaseResultMap">
+
+        select
+        <include refid="Base_Column_List"/>
+        from tb_tag
+
+    </select>
 
     <delete id="deleteById" parameterType="java.lang.Long">
         delete

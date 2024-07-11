@@ -1,6 +1,9 @@
 package com.lsj.weblog.admin.mapper;
 
+import com.github.pagehelper.Page;
+import com.lsj.weblog.admin.model.dto.FindArticlePageReqDto;
 import com.lsj.weblog.admin.model.entity.Article;
+import com.lsj.weblog.admin.model.vo.ArticleVo;
 
 /**
  * @author liushijie
@@ -19,4 +22,5 @@ public interface ArticleMapper {
     int updateById(Article record);
 
 
+    Page<ArticleVo> selectPage(FindArticlePageReqDto findArticlePageReqDto);
 }
