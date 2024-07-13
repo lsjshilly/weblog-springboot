@@ -28,6 +28,7 @@
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <result property="categoryName" column="category_name" jdbcType="BIGINT"/>
+        <result property="content" column="article_content" jdbcType="VARCHAR"/>
         <collection property="tags" ofType="com.lsj.weblog.admin.model.vo.TagVo">
             <id property="id" column="tag_id" jdbcType="BIGINT"/>
             <result property="name" column="tag_name" jdbcType="VARCHAR"/>
@@ -44,7 +45,7 @@
         is_deleted
     </sql>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <select id="selectById" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from tb_article
@@ -109,6 +110,33 @@
         </choose>
 
     </select>
+    <select id="findDetail" resultMap="ArticleVoMap"
+            parameterType="com.lsj.weblog.admin.model.dto.FindArticleDetailReqDto">
+        select a.id,
+               a.title,
+               a.cover,
+               a.summary,
+               a.status,
+               a.category,
+               a.read_num,
+               a.create_time,
+               a.update_time,
+               a.is_deleted,
+               c.name     as category_name,
+               t.id       as tag_id,
+               t.name     as tag_name,
+               ad.content as article_content
+
+        from tb_article a
+                 left join tb_category c on a.category = c.id
+                 left join tb_article_tag att on a.id = att.article_id
+                 left join tb_tag t on att.tag_id = t.id
+                 left join tb_article_detail ad on a.id = ad.article_id
+        where a.is_deleted = 0
+          and a.id = #{id}
+
+    </select>
+
 
     <update id="deleteById" parameterType="java.lang.Long">
         update

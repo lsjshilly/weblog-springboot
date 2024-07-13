@@ -18,5 +18,5 @@ public interface ArticleDetailMapper {
 
     int updateById(ArticleDetail record);
 
-
+    int updateByArticleId(ArticleDetail record);
 }

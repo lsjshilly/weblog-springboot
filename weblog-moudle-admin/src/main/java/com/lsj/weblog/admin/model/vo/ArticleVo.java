@@ -23,6 +23,12 @@ public class ArticleVo {
      * 文章摘要
      */
     private String summary;
+
+    /**
+     * 文章内容
+     */
+    private String content;
+
     /**
      * 文章状态 0-草稿 1-已发布
      */

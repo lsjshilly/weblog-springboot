@@ -1,8 +1,10 @@
 package com.lsj.weblog.admin.controller;
 
 
+import com.lsj.weblog.admin.model.dto.FindArticleDetailReqDto;
 import com.lsj.weblog.admin.model.dto.FindArticlePageReqDto;
 import com.lsj.weblog.admin.model.dto.PublishArticleReqDto;
+import com.lsj.weblog.admin.model.dto.UpdateArticleReqDto;
 import com.lsj.weblog.admin.model.vo.ArticleVo;
 import com.lsj.weblog.admin.service.ArticleService;
 import com.lsj.weblog.common.aspect.ApiOperationLog;
@@ -35,6 +37,17 @@ public class ArticleController {
 
     }
 
+    @PutMapping("/update")
+    @ApiOperationLog(description = "更新文章接口")
+    @ApiOperation("更新文章接口")
+    public ResponseResult<Void> updateArticle(@RequestBody @Validated UpdateArticleReqDto updateArticleReqDto) {
+
+        articleService.updateArticle(updateArticleReqDto);
+
+        return ResponseResult.success();
+
+    }
+
 
     @DeleteMapping()
     @ApiOperationLog(description = "删除文章接口")
@@ -50,11 +63,23 @@ public class ArticleController {
     @GetMapping()
     @ApiOperationLog(description = "分页查询文章接口")
     @ApiOperation("分页查询文章接口")
-    public ResponseResult<PageResult<ArticleVo>> deleteArticle(FindArticlePageReqDto findArticlePageReqDto) {
+    public ResponseResult<PageResult<ArticleVo>> selectArticlePage(FindArticlePageReqDto findArticlePageReqDto) {
 
         PageResult<ArticleVo> pageResult = articleService.selectArticlePage(findArticlePageReqDto);
 
         return ResponseResult.success(pageResult);
+
+    }
+
+
+    @PostMapping()
+    @ApiOperationLog(description = "获取文章详情")
+    @ApiOperation("获取文章详情")
+    public ResponseResult<ArticleVo> findArticleDetail(@RequestBody @Validated FindArticleDetailReqDto findArticleDetailReqDto) {
+
+        ArticleVo article = articleService.findArticleDetail(findArticleDetailReqDto);
+
+        return ResponseResult.success(article);
 
     }
 

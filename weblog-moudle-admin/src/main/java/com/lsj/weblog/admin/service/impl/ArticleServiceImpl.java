@@ -3,8 +3,10 @@ package com.lsj.weblog.admin.service.impl;
 import com.github.pagehelper.Page;
 import com.lsj.weblog.admin.enums.ArticlePublishStatus;
 import com.lsj.weblog.admin.mapper.*;
+import com.lsj.weblog.admin.model.dto.FindArticleDetailReqDto;
 import com.lsj.weblog.admin.model.dto.FindArticlePageReqDto;
 import com.lsj.weblog.admin.model.dto.PublishArticleReqDto;
+import com.lsj.weblog.admin.model.dto.UpdateArticleReqDto;
 import com.lsj.weblog.admin.model.entity.*;
 import com.lsj.weblog.admin.model.vo.ArticleVo;
 import com.lsj.weblog.admin.service.ArticleService;
@@ -89,12 +91,45 @@ public class ArticleServiceImpl implements ArticleService {
 
         Page<ArticleVo> articleVos = articleMapper.selectPage(findArticlePageReqDto);
 
-        return PageResult.<ArticleVo>builder().
-                total(articleVos.getTotal())
-                .currentPage(articleVos.getPageNum())
-                .pageSize(articleVos.getPageSize())
-                .items(articleVos.getResult())
-                .build();
+        return PageResult.<ArticleVo>builder().total(articleVos.getTotal()).currentPage(articleVos.getPageNum()).pageSize(articleVos.getPageSize()).items(articleVos.getResult()).build();
+    }
+
+    @Override
+    public ArticleVo findArticleDetail(FindArticleDetailReqDto findArticleDetailReqDto) {
+        return articleMapper.findDetail(findArticleDetailReqDto);
+
+    }
+
+    @Override
+    public void updateArticle(UpdateArticleReqDto updateArticleReqDto) {
+        // 校验文章是否存在
+        Article existArticle = articleMapper.selectById(updateArticleReqDto.getId());
+        if (existArticle == null) {
+            throw new BizExecption(ARTICLE_NOT_EXIST_ERROR);
+        }
+        // 校验分类是否存在
+        Category category = categoryMapper.selectById(updateArticleReqDto.getCategory());
+        if (category == null) {
+            throw new BizExecption(CATEGORY_NOT_EXIST_ERROR);
+        }
+        // 文章状态判断
+        if (updateArticleReqDto.getStatus() != ArticlePublishStatus.DRAFIT.getCode() && updateArticleReqDto.getStatus() != ArticlePublishStatus.PUBLISH.getCode()) {
+            throw new BizExecption(ARTICLE_STATUS_ERROR);
+        }
+
+        // 文章保存
+        Article article = new Article();
+        BeanUtils.copyProperties(updateArticleReqDto, article);
+        article.setId(existArticle.getId());
+        articleMapper.updateById(article);
+
+
+        ArticleDetail articleDetail = ArticleDetail.builder().articleId(article.getId()).content(updateArticleReqDto.getContent()).build();
+
+        articleDetailMapper.updateByArticleId(articleDetail);
+        // 先删除文章保存的标签关系，再更新
+        articleTagMapper.deleteByArticleId(article.getId());
+        insertTags(updateArticleReqDto.getTags(), article.getId());
     }
 
     private void insertTags(List<String> tags, long articleId) {

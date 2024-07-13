@@ -48,4 +48,13 @@
         where id = #{id,jdbcType=BIGINT}
     </update>
 
+    <update id="updateByArticleId" parameterType="com.lsj.weblog.admin.model.entity.ArticleDetail">
+        update tb_article_detail
+        <set>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where article_id = #{articleId,jdbcType=BIGINT}
+    </update>
 </mapper>
