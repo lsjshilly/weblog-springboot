@@ -29,6 +29,11 @@ public class FindArticlePageReqDto extends BasePageQuery {
     private Long categoryId;
 
     /**
+     * 文章状态：0-草稿，1-发布
+     */
+    private Integer status;
+
+    /**
      * 实体的名称。
      */
     private String title;

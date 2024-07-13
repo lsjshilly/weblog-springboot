@@ -1,5 +1,6 @@
 package com.lsj.weblog.admin.service.impl;
 
+import com.github.pagehelper.Page;
 import com.lsj.weblog.admin.enums.ArticlePublishStatus;
 import com.lsj.weblog.admin.mapper.*;
 import com.lsj.weblog.admin.model.dto.FindArticlePageReqDto;
@@ -86,9 +87,14 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public PageResult<ArticleVo> selectArticlePage(FindArticlePageReqDto findArticlePageReqDto) {
 
-        articleMapper.selectPage(findArticlePageReqDto);
+        Page<ArticleVo> articleVos = articleMapper.selectPage(findArticlePageReqDto);
 
-
+        return PageResult.<ArticleVo>builder().
+                total(articleVos.getTotal())
+                .currentPage(articleVos.getPageNum())
+                .pageSize(articleVos.getPageSize())
+                .items(articleVos.getResult())
+                .build();
     }
 
     private void insertTags(List<String> tags, long articleId) {

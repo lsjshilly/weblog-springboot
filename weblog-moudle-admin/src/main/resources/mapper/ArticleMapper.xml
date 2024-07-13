@@ -50,9 +50,63 @@
         from tb_article
         where id = #{id,jdbcType=BIGINT} and is_deleted = 0
     </select>
-    <select id="selectPage" resultType="com.lsj.weblog.admin.model.vo.ArticleVo"
+    <select id="selectPage" resultMap="ArticleVoMap"
             parameterType="com.lsj.weblog.admin.model.dto.FindArticlePageReqDto">
 
+        select
+        a.id,
+        a.title,
+        a.cover,
+        a.summary,
+        a.status,
+        a.category,
+        a.read_num,
+        a.create_time,
+        a.update_time,
+        a.is_deleted,
+        c.name as category_name,
+        t.id as tag_id,
+        t.name as tag_name
+
+        from tb_article a
+        left join tb_category c on a.category = c.id
+        left join tb_article_tag att on a.id = att.article_id
+        left join tb_tag t on att.tag_id = t.id
+        where a.is_deleted = 0
+        <choose>
+            <when test="id != null and id != ''">
+                and a.id = #{id}
+            </when>
+            <otherwise>
+                <if test="startDate != null and endDate != null">
+                    and a.create_time &gt;= #{startDate,jdbcType=TIMESTAMP}
+                    and a.create_time &lt;= #{endDate,jdbcType=TIMESTAMP}
+                </if>
+
+                <if test="title != null">
+                    and a.title like concat('%',#{title},'%')
+                </if>
+
+                <if test="status != null">
+                    and a.status = #{status}
+                </if>
+
+                <if test="categoryId != null">
+                    and a.category = #{categoryId}
+                </if>
+
+                <if test="tagIds != null and tagIds.size() > 0">
+                    and a.id in (
+                    select article_id from tb_article_tag where tag_id in (
+                    <foreach collection="tagIds" item="tagId" separator=",">
+                        #{tagId}
+                    </foreach>
+                    )
+                    )
+                </if>
+
+            </otherwise>
+        </choose>
 
     </select>
 
