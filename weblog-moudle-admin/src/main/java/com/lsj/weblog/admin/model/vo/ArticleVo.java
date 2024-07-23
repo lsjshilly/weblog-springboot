@@ -2,7 +2,7 @@ package com.lsj.weblog.admin.model.vo;
 
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -55,9 +55,9 @@ public class ArticleVo {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
     /**
      * 更新时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 }

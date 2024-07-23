@@ -49,7 +49,7 @@ public class ArticleController {
     }
 
 
-    @DeleteMapping()
+    @DeleteMapping("/delete")
     @ApiOperationLog(description = "删除文章接口")
     @ApiOperation("删除文章接口")
     public ResponseResult<Void> deleteArticle(@RequestBody IdRequestDto idRequestDto) {
@@ -60,7 +60,7 @@ public class ArticleController {
 
     }
 
-    @GetMapping()
+    @GetMapping("/page")
     @ApiOperationLog(description = "分页查询文章接口")
     @ApiOperation("分页查询文章接口")
     public ResponseResult<PageResult<ArticleVo>> selectArticlePage(FindArticlePageReqDto findArticlePageReqDto) {
