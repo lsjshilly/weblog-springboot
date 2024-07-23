@@ -26,4 +26,6 @@ public interface ArticleMapper {
     Page<ArticleVo> selectPage(FindArticlePageReqDto findArticlePageReqDto);
 
     ArticleVo findDetail(FindArticleDetailReqDto findArticleDetailReqDto);
+
+    int selectCountByCategoryId(Long categoryId);
 }

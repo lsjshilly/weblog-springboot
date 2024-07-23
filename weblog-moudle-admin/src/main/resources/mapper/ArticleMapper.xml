@@ -136,6 +136,12 @@
           and a.id = #{id}
 
     </select>
+    <select id="selectCountByCategoryId" resultType="java.lang.Integer" parameterType="java.lang.Long">
+        select count(*)
+        from tb_article
+        where category = #{categoryId}
+          and is_deleted = 0 limit 1
+    </select>
 
 
     <update id="deleteById" parameterType="java.lang.Long">

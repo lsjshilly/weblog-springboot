@@ -2,6 +2,7 @@ package com.lsj.weblog.admin.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.lsj.weblog.admin.mapper.ArticleTagMapper;
 import com.lsj.weblog.admin.mapper.TagMapper;
 import com.lsj.weblog.admin.model.dto.AddTagReqDto;
 import com.lsj.weblog.admin.model.dto.FindTagPageReqDto;
@@ -32,6 +33,8 @@ public class TagServiceImpl implements TagService {
     private final TagMapper tagMapper;
 
     private final SqlSessionFactory sqlSessionFactory;
+
+    private final ArticleTagMapper articleTagMapper;
 
 
     @Override
@@ -70,6 +73,12 @@ public class TagServiceImpl implements TagService {
     public void deleteTag(IdRequestDto idRequestDto) {
         if (idRequestDto.getId() == null) {
             throw new BizExecption(ResponseCodeEnum.VALIDATION_ERROR);
+        }
+
+        // 判断标签是否在使用
+        int count = articleTagMapper.selectCountByTagId(idRequestDto.getId());
+        if (count > 0) {
+            throw new BizExecption(ResponseCodeEnum.TAG_USED_ERROR);
         }
 
         int nums = tagMapper.deleteById(idRequestDto.getId());

@@ -35,19 +35,23 @@ public enum ResponseCodeEnum implements BaseExecptionInterface {
     // -----------后台管理 分类相关异常----------
     CATEGORY_NAME_EXIST_ERROR("100201", "分类名称已存在，请勿重复添加"),
 
-    TAG_NAME_EXIST_ERROR("100202", "标签名称已存在，请勿重复添加"),
+    CATEGORY_USED_ERROR("100202", "分类正在使用中，请勿删除"),
 
-    AVATAR_EMPTY_ERROR("100203", "头像文件不能为空"),
+    CATEGORY_NOT_EXIST_ERROR("100203", "分类名称不存在"),
 
-    AVATAR_UPLOAD_ERROR("100204", "头像上传失败"),
+    TAG_NAME_EXIST_ERROR("100301", "标签名称已存在，请勿重复添加"),
 
-    CATEGORY_NOT_EXIST_ERROR("100205", "分类名称不存在"),
+    TAG_USED_ERROR("100302", "标签正在使用中，请勿删除"),
 
-    ARTICLE_STATUS_ERROR("100206", "文章只能为发布或草稿状态"),
+    AVATAR_EMPTY_ERROR("100401", "头像文件不能为空"),
 
-    ARTICLE_NOT_EXIST_ERROR("100207", "文章不存在"),
+    AVATAR_UPLOAD_ERROR("100402", "头像上传失败"),
+
+    ARTICLE_STATUS_ERROR("100501", "文章只能为发布或草稿状态"),
+
+    ARTICLE_NOT_EXIST_ERROR("100502", "文章不存在"),
+
     ;
-
 
     private String code;
     private String message;

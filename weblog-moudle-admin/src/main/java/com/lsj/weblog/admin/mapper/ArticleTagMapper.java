@@ -22,4 +22,6 @@ public interface ArticleTagMapper {
 
     @Delete("delete from tb_article_tag where article_id = #{articleId}")
     int deleteByArticleId(long articleId);
+
+    int selectCountByTagId(Long id);
 }

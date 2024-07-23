@@ -2,6 +2,7 @@ package com.lsj.weblog.admin.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.lsj.weblog.admin.mapper.ArticleMapper;
 import com.lsj.weblog.admin.mapper.CategoryMapper;
 import com.lsj.weblog.admin.model.dto.AddCategoryReqDto;
 import com.lsj.weblog.admin.model.dto.FindCategoryPageReqDto;
@@ -28,6 +29,8 @@ public class CateGoryServiceImpl implements CateGoryService {
 
 
     private final CategoryMapper categoryMapper;
+
+    private final ArticleMapper articleMapper;
 
 
     @Override
@@ -65,6 +68,12 @@ public class CateGoryServiceImpl implements CateGoryService {
     public void deleteCategory(IdRequestDto idRequestDto) {
         if (idRequestDto.getId() == null) {
             throw new BizExecption(ResponseCodeEnum.VALIDATION_ERROR);
+        }
+        // 判断是否被文章使用
+        int articleNums = articleMapper.selectCountByCategoryId(idRequestDto.getId());
+
+        if (articleNums != 0) {
+            throw new BizExecption(ResponseCodeEnum.CATEGORY_USED_ERROR);
         }
 
         int nums = categoryMapper.deleteById(idRequestDto.getId());

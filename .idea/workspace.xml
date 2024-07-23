@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="feat(admin): add article management controllers and services&#10;&#10;- Implement ArticleController for article publishing, deleting, and paging.&#10;- Add ArticleService and ArticleServiceImpl for article operations.&#10;- Include necessary DTOs and mappers for article management.&#10;- Refactor TagMapper and ArticleMapper for better data handling.">
+    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="feat(admin): optimize article API endpoints and update date type&#10;&#10;- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.- Ensure all lines in the commit message">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindArticlePageReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindArticlePageReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-module-common/src/main/java/com/lsj/weblog/common/execption/ResponseCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/ArticleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/ArticleTagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/ArticleTagMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/TagServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/ArticleTagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/ArticleTagMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,46 +64,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "JUnit.RadndUtilTest.testRadnd.executor": "Run",
-    "JUnit.SqlTest.test.executor": "Run",
-    "JUnit.WeBlogApplicationTest.msyql.executor": "Run",
-    "JUnit.WeBlogApplicationTest.test2.executor": "Run",
-    "JUnit.WeBlogApplicationTest.testInsertBatch.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.weblog [clean].executor": "Run",
-    "Maven.weblog [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.WeBlogApplication.executor": "Run",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/e/code/OtherProjects/weblog/weblog-springboot/weblog-moudle-admin/src/main/resources",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;JUnit.RadndUtilTest.testRadnd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SqlTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.msyql.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.testInsertBatch.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.weblog [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.weblog [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WeBlogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/e/code/OtherProjects/weblog/weblog-springboot/weblog-moudle-admin/src/main/resources&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.lsj.weblog.admin.service.impl" />
@@ -264,7 +267,12 @@
       <workItem from="1720450264870" duration="2514000" />
       <workItem from="1720618848261" duration="7567000" />
       <workItem from="1720707239732" duration="5104000" />
-      <workItem from="1720876807142" duration="5388000" />
+      <workItem from="1720876807142" duration="9853000" />
+      <workItem from="1720956279405" duration="4158000" />
+      <workItem from="1721142173527" duration="1219000" />
+      <workItem from="1721226904140" duration="1315000" />
+      <workItem from="1721657754682" duration="2226000" />
+      <workItem from="1721743402466" duration="4360000" />
     </task>
     <task id="LOCAL-00001" summary="自定义注解-实现日志切面">
       <option name="closed" value="true" />
@@ -394,7 +402,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720712340387</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat(admin): add article management functionalityImplement new article management features including controllers, services,&#10;and necessary DTOs and mappers. Refactor existing TagMapper and ArticleMapper&#10;for improved data handling. The commit also removes MyBatis logging&#10;configuration to clean up the logs.">
+      <option name="closed" value="true" />
+      <created>1720882854165</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720882854165</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat(admin): add article update and detail query functionality&#10;&#10;- Implement updateArticle and findArticleDetail methods in ArticleController.- Add corresponding service and mapper implementations for article update and detail query.&#10;- Refactor ArticleMapper and ArticleDetailMapper for improved data manipulation.&#10;- Include new DTOs UpdateArticleReqDto and FindArticleDetailReqDto.">
+      <option name="closed" value="true" />
+      <created>1720886058402</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1720886058402</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat(admin): optimize article API endpoints and update date type&#10;&#10;- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.- Ensure all lines in the commit message are under 100 characters.">
+      <option name="closed" value="true" />
+      <created>1721747470465</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1721747470465</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +445,10 @@
     <MESSAGE value="博客设置-更新设置接口" />
     <MESSAGE value="feat(article): implement article publishing functionality- Add ArticlePublishStatus enum for article status management.&#10;- Implement ArticleService and ArticleServiceImpl for article creation.&#10;- Include necessary mapper and DTO classes for article publishing.&#10;- Remove MyBatis logging configuration for cleaner logs." />
     <MESSAGE value="feat(admin): add article management controllers and services&#10;&#10;- Implement ArticleController for article publishing, deleting, and paging.&#10;- Add ArticleService and ArticleServiceImpl for article operations.&#10;- Include necessary DTOs and mappers for article management.&#10;- Refactor TagMapper and ArticleMapper for better data handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(admin): add article management controllers and services&#10;&#10;- Implement ArticleController for article publishing, deleting, and paging.&#10;- Add ArticleService and ArticleServiceImpl for article operations.&#10;- Include necessary DTOs and mappers for article management.&#10;- Refactor TagMapper and ArticleMapper for better data handling." />
+    <MESSAGE value="feat(admin): add article management functionalityImplement new article management features including controllers, services,&#10;and necessary DTOs and mappers. Refactor existing TagMapper and ArticleMapper&#10;for improved data handling. The commit also removes MyBatis logging&#10;configuration to clean up the logs." />
+    <MESSAGE value="feat(admin): add article update and detail query functionality&#10;&#10;- Implement updateArticle and findArticleDetail methods in ArticleController.- Add corresponding service and mapper implementations for article update and detail query.&#10;- Refactor ArticleMapper and ArticleDetailMapper for improved data manipulation.&#10;- Include new DTOs UpdateArticleReqDto and FindArticleDetailReqDto." />
+    <MESSAGE value="feat(admin): optimize article API endpoints and update date type&#10;&#10;- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.- Ensure all lines in the commit message" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(admin): optimize article API endpoints and update date type&#10;&#10;- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.- Ensure all lines in the commit message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
