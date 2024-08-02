@@ -18,7 +18,6 @@
 
     <modules>
         <module>weblog-moule-web</module>
-        <module>weblog-moudle-admin</module>
         <module>weblog-module-common</module>
         <module>weblog-module-security</module>
     </modules>
@@ -44,11 +43,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.lsj.weblog.admin</groupId>
-                <artifactId>weblog-moudle-admin</artifactId>
-                <version>${weblog.version}</version>
-            </dependency>
+ 
 
             <dependency>
                 <groupId>com.lsj.weblog.common</groupId>

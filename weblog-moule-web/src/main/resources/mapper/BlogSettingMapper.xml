@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsj.weblog.web.mapper.BlogSettingMapper">
+
+    <resultMap id="BaseResultMap" type="com.lsj.weblog.web.domain.entity.BlogSetting">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="blogname" column="blogname" jdbcType="VARCHAR"/>
+        <result property="authorname" column="authorname" jdbcType="VARCHAR"/>
+        <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="githubHomePage" column="github_home_page" jdbcType="VARCHAR"/>
+        <result property="giteeHomePage" column="gitee_home_page" jdbcType="VARCHAR"/>
+        <result property="csdnHomePage" column="csdn_home_page" jdbcType="VARCHAR"/>
+        <result property="zhihuHomePage" column="zhihu_home_page" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,blogname,authorname,
+        avatar_url,description,github_home_page,
+        gitee_home_page,csdn_home_page,zhihu_home_page,
+        create_time,update_time
+    </sql>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_blog_setting
+        where id = #{id}
+    </select>
+
+
+    <update id="updateById" parameterType="com.lsj.weblog.web.domain.entity.BlogSetting">
+        update tb_blog_setting
+        <set>
+            <if test="blogname != null">
+                blogname = #{blogname,jdbcType=VARCHAR},
+            </if>
+            <if test="authorname != null">
+                authorname = #{authorname,jdbcType=VARCHAR},
+            </if>
+            <if test="avatarUrl != null">
+                avatar_url = #{avatarUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null">
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="githubHomePage != null">
+                github_home_page = #{githubHomePage,jdbcType=VARCHAR},
+            </if>
+            <if test="giteeHomePage != null">
+                gitee_home_page = #{giteeHomePage,jdbcType=VARCHAR},
+            </if>
+            <if test="csdnHomePage != null">
+                csdn_home_page = #{csdnHomePage,jdbcType=VARCHAR},
+            </if>
+            <if test="zhihuHomePage != null">
+                zhihu_home_page = #{zhihuHomePage,jdbcType=VARCHAR},
+            </if>
+
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>

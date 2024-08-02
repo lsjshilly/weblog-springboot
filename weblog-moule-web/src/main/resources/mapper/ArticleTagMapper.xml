@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsj.weblog.web.mapper.ArticleTagMapper">
+
+    <resultMap id="BaseResultMap" type="com.lsj.weblog.web.domain.entity.ArticleTag">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+        <result property="tagId" column="tag_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,article_id,tag_id
+    </sql>
+
+    <select id="selectById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_article_tag
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectCountByTagId" resultType="java.lang.Integer" parameterType="java.lang.Long">
+        select count(1)
+        from tb_article_tag
+        where tag_id = #{tagId,jdbcType=BIGINT}
+
+    </select>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from tb_article_tag
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.lsj.weblog.web.domain.entity.ArticleTag"
+            useGeneratedKeys="true">
+        insert into tb_article_tag
+            (article_id, tag_id)
+        values (#{articleId,jdbcType=BIGINT}, #{tagId,jdbcType=BIGINT})
+    </insert>
+
+    <update id="updateById" parameterType="com.lsj.weblog.web.domain.entity.ArticleTag">
+        update tb_article_tag
+        <set>
+            <if test="articleId != null">
+                article_id = #{articleId,jdbcType=BIGINT},
+            </if>
+            <if test="tagId != null">
+                tag_id = #{tagId,jdbcType=BIGINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+</mapper>

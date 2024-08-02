@@ -1,10 +1,10 @@
 package com.lsj.weblog.web;
 
-import com.lsj.weblog.admin.mapper.ArticleTagMapper;
-import com.lsj.weblog.admin.model.entity.ArticleTag;
-import com.lsj.weblog.admin.service.impl.InsertBatchService;
 import com.lsj.weblog.security.domain.entity.User;
 import com.lsj.weblog.security.mapper.UserMapper;
+import com.lsj.weblog.web.domain.entity.ArticleTag;
+import com.lsj.weblog.web.mapper.ArticleTagMapper;
+import com.lsj.weblog.web.service.impl.InsertBatchService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -54,7 +54,7 @@ class WeBlogApplicationTest {
 
     @Test
     void testInsertBatch() {
-        String statement = "com.lsj.weblog.admin.mapper.ArticleTagMapper.insert";
+        String statement = "com.lsj.weblog.web.mapper.ArticleTagMapper.insert";
 
         List<ArticleTag> articleTags = new ArrayList<>();
         // 生成50万数据
