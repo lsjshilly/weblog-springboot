@@ -23,7 +23,7 @@ public class Knife4jConfiguration {
                 .groupName("web")
                 .select()
                 //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.lsj.weblog.web.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.lsj.weblog.web.controller.web"))
                 .paths(PathSelectors.any())
                 .build();
     }

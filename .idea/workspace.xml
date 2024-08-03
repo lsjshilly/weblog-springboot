@@ -4,65 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="feat(admin): add article management functionalityImplement new article management features including controllers, services,&#10;and necessary DTOs and mappers. Refactor existing TagMapper and ArticleMapper&#10;for improved data handling. The commit also removes MyBatis logging&#10;configuration to clean up the logs.feat(admin): add article update and detail query functionality&#10;&#10;- Implement updateArticle and findArticleDetail methods in ArticleController.- Add corresponding service and mapper implementations for article update and detail query.&#10;- Refactor ArticleMapper and ArticleDetailMapper for improved data manipulation.&#10;- Include new DTOs UpdateArticleReqDto and FindArticleDetailReqDto.&#10;&#10;feat(admin): optimize article API endpoints and update date type- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.&#10;- Ensure all lines in the commit message are under 100 characters.&#10;&#10;fix(admin): prevent deletion of categories and tags in useAdd checks in CategoryServiceImpl and TagServiceImpl to prevent the deletion of&#10;categories and">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="511b6500-dbb6-4bb2-8e97-5bd1aa7c1335" name="Changes" comment="refactor(weblog): migrate admin module to weblog-moule-webMigrate classes and configurations from the admin module to the weblog-moule-web&#10;module, adjusting package structures and XML namespaces, to align with the new project&#10;architecture. This includes the transfer of controllers, services, mappers, and DTOs/VOs&#10;related to articles, categories, tags, and blog settings.">
+      <change afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/constant/CommonConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/web/WebArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/WebFindArticlePageReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/config/Knife4jAdminConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/config/Knife4jAdminConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/AdminTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/AdminTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/BlogSettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/BlogSettingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/TagController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/enums/ArticlePublishStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/enums/ArticlePublishStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/ArticleDetailMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/mapper/ArticleDetailMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/mapper/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/ArticleTagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/mapper/ArticleTagMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/BlogSettingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/mapper/BlogSettingMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/mapper/CategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/mapper/TagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/mapper/TagMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddCategoryReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/AddCategoryReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/AddTagReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/AddTagReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindArticleDetailReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/FindArticleDetailReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindArticlePageReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/FindArticlePageReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindCategoryPageReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/FindCategoryPageReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/FindTagPageReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/FindTagPageReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/PublishArticleReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/PublishArticleReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/SearchTagReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/SearchTagReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/UpdateArticleReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/UpdateArticleReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/dto/UpdateBlogSettingReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/UpdateBlogSettingReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/entity/ArticleDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/entity/ArticleDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/entity/ArticleTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/entity/ArticleTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/entity/BlogSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/entity/BlogSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/entity/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/entity/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/vo/ArticleVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/vo/ArticleVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/vo/BlogSettingVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/vo/BlogSettingVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/vo/CategoryVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/vo/CategoryVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/model/vo/TagVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/vo/TagVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/BlogSettingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/BlogSettingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/CateGoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/CateGoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/TagService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/BlogSettingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/impl/BlogSettingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/CateGoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/impl/CateGoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/InsertBatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/impl/InsertBatchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/java/com/lsj/weblog/admin/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/impl/TagServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/ArticleDetailMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/mapper/ArticleDetailMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/ArticleTagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/mapper/ArticleTagMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/BlogSettingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/mapper/BlogSettingMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/main/resources/mapper/TagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/resources/mapper/TagMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moudle-admin/src/test/java/com/lsj/weblog/admin/RadndUtilTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/controller/TestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/domain/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/test/java/com/lsj/weblog/web/WeBlogApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/config/Knife4jAdminConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/config/Knife4jAdminConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/config/Knife4jConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/config/Knife4jConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/weblog-moule-web/src/main/java/com/lsj/weblog/web/service/impl/ArticleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,46 +67,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "JUnit.RadndUtilTest.testRadnd.executor": "Run",
-    "JUnit.SqlTest.test.executor": "Run",
-    "JUnit.WeBlogApplicationTest.msyql.executor": "Run",
-    "JUnit.WeBlogApplicationTest.test2.executor": "Run",
-    "JUnit.WeBlogApplicationTest.testInsertBatch.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.weblog [clean].executor": "Run",
-    "Maven.weblog [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.WeBlogApplication.executor": "Run",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/e/code/OtherProjects/weblog/weblog-springboot/weblog-moudle-admin/src/main/resources",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "editor.preferences.import",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;JUnit.RadndUtilTest.testRadnd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SqlTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.msyql.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeBlogApplicationTest.testInsertBatch.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.weblog [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.weblog [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WeBlogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/e/code/OtherProjects/weblog/weblog-springboot/weblog-moudle-admin/src/main/resources&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.lsj.weblog.admin.service.impl" />
@@ -326,7 +277,9 @@
       <workItem from="1721226904140" duration="1315000" />
       <workItem from="1721657754682" duration="2226000" />
       <workItem from="1721743402466" duration="5004000" />
-      <workItem from="1722589978968" duration="3725000" />
+      <workItem from="1722589978968" duration="8707000" />
+      <workItem from="1722654062703" duration="3621000" />
+      <workItem from="1722693579296" duration="1776000" />
     </task>
     <task id="LOCAL-00001" summary="自定义注解-实现日志切面">
       <option name="closed" value="true" />
@@ -488,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721748794540</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="refactor(weblog): migrate admin module to weblog-moule-webMigrate classes and configurations from the admin module to the weblog-moule-web&#10;module, adjusting package structures and XML namespaces, to align with the new project&#10;architecture. This includes the transfer of controllers, services, mappers, and DTOs/VOs&#10;related to articles, categories, tags, and blog settings.">
+      <option name="closed" value="true" />
+      <created>1722594203041</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1722594203041</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +472,8 @@
     <MESSAGE value="feat(admin): add article update and detail query functionality&#10;&#10;- Implement updateArticle and findArticleDetail methods in ArticleController.- Add corresponding service and mapper implementations for article update and detail query.&#10;- Refactor ArticleMapper and ArticleDetailMapper for improved data manipulation.&#10;- Include new DTOs UpdateArticleReqDto and FindArticleDetailReqDto." />
     <MESSAGE value="feat(admin): optimize article API endpoints and update date type&#10;&#10;- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.- Ensure all lines in the commit message" />
     <MESSAGE value="feat(admin): add article management functionalityImplement new article management features including controllers, services,&#10;and necessary DTOs and mappers. Refactor existing TagMapper and ArticleMapper&#10;for improved data handling. The commit also removes MyBatis logging&#10;configuration to clean up the logs.feat(admin): add article update and detail query functionality&#10;&#10;- Implement updateArticle and findArticleDetail methods in ArticleController.- Add corresponding service and mapper implementations for article update and detail query.&#10;- Refactor ArticleMapper and ArticleDetailMapper for improved data manipulation.&#10;- Include new DTOs UpdateArticleReqDto and FindArticleDetailReqDto.&#10;&#10;feat(admin): optimize article API endpoints and update date type- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.&#10;- Ensure all lines in the commit message are under 100 characters.&#10;&#10;fix(admin): prevent deletion of categories and tags in useAdd checks in CategoryServiceImpl and TagServiceImpl to prevent the deletion of&#10;categories and" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(admin): add article management functionalityImplement new article management features including controllers, services,&#10;and necessary DTOs and mappers. Refactor existing TagMapper and ArticleMapper&#10;for improved data handling. The commit also removes MyBatis logging&#10;configuration to clean up the logs.feat(admin): add article update and detail query functionality&#10;&#10;- Implement updateArticle and findArticleDetail methods in ArticleController.- Add corresponding service and mapper implementations for article update and detail query.&#10;- Refactor ArticleMapper and ArticleDetailMapper for improved data manipulation.&#10;- Include new DTOs UpdateArticleReqDto and FindArticleDetailReqDto.&#10;&#10;feat(admin): optimize article API endpoints and update date type- Refactor delete and page GET methods with specific paths for better clarity.&#10;- Replace Java.util.Date with java.time.LocalDateTime in ArticleVo.&#10;- Ensure all lines in the commit message are under 100 characters.&#10;&#10;fix(admin): prevent deletion of categories and tags in useAdd checks in CategoryServiceImpl and TagServiceImpl to prevent the deletion of&#10;categories and" />
+    <MESSAGE value="refactor(weblog): migrate admin module to weblog-moule-webMigrate classes and configurations from the admin module to the weblog-moule-web&#10;module, adjusting package structures and XML namespaces, to align with the new project&#10;architecture. This includes the transfer of controllers, services, mappers, and DTOs/VOs&#10;related to articles, categories, tags, and blog settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(weblog): migrate admin module to weblog-moule-webMigrate classes and configurations from the admin module to the weblog-moule-web&#10;module, adjusting package structures and XML namespaces, to align with the new project&#10;architecture. This includes the transfer of controllers, services, mappers, and DTOs/VOs&#10;related to articles, categories, tags, and blog settings." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
