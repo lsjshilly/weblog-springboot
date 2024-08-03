@@ -2,6 +2,7 @@ package com.lsj.weblog.web.service.impl;
 
 
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.lsj.weblog.common.base.IdRequestDto;
 import com.lsj.weblog.common.base.PageResult;
 import com.lsj.weblog.common.execption.BizExecption;
@@ -158,6 +159,7 @@ public class ArticleServiceImpl implements ArticleService {
             findArticlePageReqDto.setPageNum(CommonConst.DEFAULT_PAGE_NUM);
         }
 
+        PageHelper.startPage(findArticlePageReqDto.getPageNum(), findArticlePageReqDto.getPageSize());
         Page<ArticleVo> articleVos = articleMapper.selectPage(findArticlePageReqDto);
         return PageResult.<ArticleVo>builder()
                 .total(articleVos.getTotal())
